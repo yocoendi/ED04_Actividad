@@ -32,18 +32,24 @@ public class BolsaEmpleo {
 // Método que añade una persona a la bolsa de trabajo si es mayor de edad y no se encuentra en ninguna otra bolsa de trabajo
 	public void anyadirPersona(Persona persona, List<BolsaEmpleo> listaDeBolsas) {
 
-		boolean estaEnBolsa = false;
-		if (persona.obtenerEdad() >= 18) {
-			for (BolsaEmpleo bolsa : listaDeBolsas) {
-				if (bolsa.listaVacantes.contains(persona)) {
-					estaEnBolsa = true;
-				}
-			}
-			if (!estaEnBolsa) {
-				this.listaVacantes.add(persona);
+		extracted(persona, listaDeBolsas);
+	}
+
+private void extracted(Persona persona, List<BolsaEmpleo> listaDeBolsas) {
+	boolean estaEnBolsa = false;
+	if (persona.obtenerEdad() >= 18) {
+		for (BolsaEmpleo bolsa : listaDeBolsas) {
+			if (bolsa.listaVacantes.contains(persona)) {
+				estaEnBolsa = true;
 			}
 		}
+		if (!estaEnBolsa) {
+			this.listaVacantes.add(persona);
+		}
 	}
+}
+
+
 
 	@Override
 	public String toString() {
