@@ -31,6 +31,7 @@ public class Persona {
 //   sea una letra, tiene que cumplir que el último
 //   carácter se corresponda con el dígito de control de
 //   la tabla después de aplicar la operación módulo 23.
+	
 
 	public Persona(String nombre, String apellidos, String dni, Date fecha_nacimiento, String calle) {
 		super();
